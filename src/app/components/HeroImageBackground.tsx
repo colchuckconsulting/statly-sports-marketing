@@ -5,7 +5,6 @@ import { IconBallBaseball } from "@tabler/icons-react";
 
 export function HeroImageBackground() {
   const theme = useMantineTheme();
-  console.log("theme", theme);
   return (
     <Box className={classes.root}>
       <Box className={classes.inner}>

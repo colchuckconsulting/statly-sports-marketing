@@ -1,4 +1,5 @@
 {
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -6,6 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/charts": "^7.17.2",
     "@mantine/core": "^7.17.2",
     "@mantine/form": "^7.17.2",
     "@mantine/hooks": "^7.17.2",
@@ -13,7 +15,8 @@
     "@types/react": "^19.0.12",
     "next": "^15.2.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "2"
   },
   "devDependencies": {
     "@types/node": "22.13.13",
