@@ -1,22 +1,33 @@
-import { Button, Box, Text, Title } from "@mantine/core";
+"use client";
+import { Button, Box, Text, Title, useMantineTheme } from "@mantine/core";
 import classes from "./HeroImageBackground.module.css";
+import { IconBallBaseball } from "@tabler/icons-react";
 
 export function HeroImageBackground() {
+  const theme = useMantineTheme();
+  console.log("theme", theme);
   return (
     <Box className={classes.root}>
       <Box className={classes.inner}>
         <Box className={classes.content}>
           <Title className={classes.title}>
-            A{" "}
+            From{" "}
+            <Text component="span" inherit fs="italic" td="underline">
+              Practice to Pro
+            </Text>{" "}
+            Power Your Game with{" "}
             <Text
               component="span"
               inherit
               variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
+              gradient={{
+                from: theme.other.statlySportsBlue,
+                to: theme.other.statlySportsRed,
+                deg: 160,
+              }}
             >
-              fully featured
-            </Text>{" "}
-            React components library
+              Statly Sports
+            </Text>
           </Title>
 
           <Text className={classes.description} mt={30}>
@@ -26,11 +37,17 @@ export function HeroImageBackground() {
           </Text>
           <Box className={classes.controlContainer}>
             <Button
-              variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
+              variant="outline"
               size="xl"
               className={classes.control}
-              mt={40}
+              rightSection={
+                <IconBallBaseball
+                  stroke={2}
+                  style={{
+                    marginBottom: "-5px",
+                  }}
+                />
+              }
             >
               Get started
             </Button>

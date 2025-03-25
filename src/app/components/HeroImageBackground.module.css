@@ -52,7 +52,6 @@
 
 .description {
   color: var(--mantine-color-white);
-  opacity: 0.75;
   max-width: 500px;
   text-align: right;
 
@@ -75,8 +74,54 @@
 }
 
 .control {
+  position: relative; /* enables absolute positioning of the pseudo-element */
   font-size: 22px;
+  margin-top: 40px;
+  color: var(--mantine-color-white);
+  border: 1px solid var(--mantine-color-white);
+  border-radius: var(--mantine-radius-xl);
+  padding-left: 80px;
+  padding-right: 80px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden; /* ensures the pseudo-element doesn’t spill outside the button */
   @media (max-width: $mantine-breakpoint-md) {
     width: 100%;
+  }
+}
+
+.control::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.control:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* subtle white tint */
+  transform: translateY(-2px) rotate(3deg) scale(1.05); /* wild rotation and scale */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* added shadow for depth */
+  color: var(--mantine-color-white);
+}
+
+.control:hover::before {
+  opacity: 1;
+  animation: wild-gradient 3s ease infinite; /* animate the background gradient */
+}
+
+@keyframes wild-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

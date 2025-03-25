@@ -157,14 +157,16 @@ export function HeaderMegaMenu() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            {/* Keep this Group element for proper spacing on desktop */}
+            {/* <Button variant="default">Log in</Button>
+            <Button>Sign up</Button> */}
           </Group>
 
           <Burger
             opened={drawerOpened}
             onClick={toggleDrawer}
             hiddenFrom="sm"
+            color={"var(--mantine-color-white)"}
           />
         </Group>
       </header>
