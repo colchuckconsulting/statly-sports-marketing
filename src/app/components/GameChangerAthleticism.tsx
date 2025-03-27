@@ -24,7 +24,7 @@ const playerStats = [
   { atBats: 53, runs: 26, hits: 26, ops: 1.3, rbi: 20, sb: 10 },
   { atBats: 58, runs: 27, hits: 30, ops: 1.6, rbi: 24, sb: 11 },
   { atBats: 46, runs: 21, hits: 23, ops: 1.3, rbi: 18, sb: 6 },
-  { atBats: 62, runs: 31, hits: 34, ops: 1.8, rbi: 30, sb: 9 },
+  // { atBats: 62, runs: 31, hits: 34, ops: 1.8, rbi: 30, sb: 9 },
 ];
 
 export function GameChangerAthleticism() {
@@ -32,9 +32,9 @@ export function GameChangerAthleticism() {
 
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
-  const rows = playerStats.map((playerStat) => (
+  const rows = playerStats.map((playerStat, index) => (
     <Table.Tr
-      key={playerStat.ops}
+      key={index}
       bg={
         selectedRows.includes(playerStat.atBats)
           ? "var(--mantine-color-blue-light)"

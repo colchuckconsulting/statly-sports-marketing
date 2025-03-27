@@ -11,7 +11,7 @@ export function HeroImageBackground() {
         <Box className={classes.content}>
           <Title className={classes.title}>
             From{" "}
-            <Text component="span" inherit fs="italic" td="underline">
+            <Text component="span" inherit td="underline">
               Practice to Pro
             </Text>{" "}
             Power Your Game with{" "}

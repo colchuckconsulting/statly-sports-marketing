@@ -4,8 +4,15 @@
 
 import { createTheme, DEFAULT_THEME } from "@mantine/core";
 import localFont from "next/font/local";
+import { Bebas_Neue } from "next/font/google";
 
 // Font files can be colocated inside of the `app`
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  preload: true,
+});
 
 const enforce = localFont({
   src: "../../public/fonts/enforce/Enforce.ttf",
@@ -37,7 +44,7 @@ export const theme = createTheme({
   // primaryColor: "#002859",
   colors: {},
   headings: {
-    fontFamily: `${enforce.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
+    fontFamily: `${bebasNeue.style.fontFamily}, ${DEFAULT_THEME.headings.fontFamily}`,
   },
   other: {
     statlySportsBlue: "#002859",

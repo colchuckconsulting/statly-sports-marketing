@@ -39,7 +39,7 @@ function normalizeVerticalJump(inches: number): number {
 const data = [
   {
     label: "60 Yard Dash",
-    stats: "6.7s",
+    stats: "6.7 s",
     progress: normalize60YardDash(6.7),
     color: "teal",
     icon: "run",

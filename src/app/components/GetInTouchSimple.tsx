@@ -29,7 +29,7 @@ export function GetInTouchSimple() {
 
   return (
     <form onSubmit={form.onSubmit(() => {})}>
-      <Container size="xl" mt="xl" mb="xl">
+      <Container size="lg" mt="xl" mb="xl">
         <Title
           order={2}
           size="h1"
@@ -37,7 +37,7 @@ export function GetInTouchSimple() {
           ta="center"
           c={theme.other.statlySportsGray}
         >
-          Get in touch
+          Contact Us
         </Title>
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
