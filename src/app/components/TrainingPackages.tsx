@@ -61,6 +61,7 @@ export function TrainingPackages() {
           ff={theme.other.statlySportsFontBebasNeue}
           fz={70}
           ta={"center"}
+          id="trainingPackages"
         >
           Training Packages
         </Text>

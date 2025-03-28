@@ -1,58 +1,73 @@
 "use client";
-import { Button, Box, Text, Title, useMantineTheme } from "@mantine/core";
+import {
+  Button,
+  Box,
+  Text,
+  Title,
+  useMantineTheme,
+  Anchor,
+} from "@mantine/core";
 import classes from "./HeroImageBackground.module.css";
 import { IconBallBaseball } from "@tabler/icons-react";
+import { Fade } from "react-awesome-reveal";
 
 export function HeroImageBackground() {
   const theme = useMantineTheme();
   return (
     <Box className={classes.root}>
       <Box className={classes.inner}>
-        <Box className={classes.content}>
-          <Title className={classes.title}>
-            From{" "}
-            <Text component="span" inherit td="underline">
-              Practice to Pro
-            </Text>{" "}
-            Power Your Game with{" "}
-            <Text
-              component="span"
-              inherit
-              variant="gradient"
-              gradient={{
-                from: theme.other.statlySportsBlue,
-                to: theme.other.statlySportsRed,
-                deg: 160,
-              }}
-            >
-              Statly Sports
-            </Text>
-          </Title>
+        <Fade direction="up" duration={900} triggerOnce>
+          <Box className={classes.content}>
+            <Title className={classes.title}>
+              From{" "}
+              <Text component="span" inherit td="underline">
+                Practice to Pro
+              </Text>{" "}
+              Power Your Game with{" "}
+              <Text
+                component="span"
+                inherit
+                variant="gradient"
+                gradient={{
+                  from: theme.other.statlySportsBlue,
+                  to: theme.other.statlySportsRed,
+                  deg: 160,
+                }}
+              >
+                Statly Sports
+              </Text>
+            </Title>
 
-          <Text className={classes.description} mt={30}>
-            Whether you're training in the offseason or chasing greatness
-            year-round, Statly Sports gives athletes and coaches the tools they
-            need to track progress, craft performance-driven sessions, and turn
-            potential into performance.
-          </Text>
-          <Box className={classes.controlContainer}>
-            <Button
-              variant="outline"
-              size="xl"
-              className={classes.control}
-              rightSection={
-                <IconBallBaseball
-                  stroke={2}
-                  style={{
-                    marginBottom: "-5px",
-                  }}
-                />
-              }
-            >
-              Get started
-            </Button>
+            <Text className={classes.description} mt={30}>
+              Whether you're training in the offseason or chasing greatness
+              year-round, Statly Sports gives athletes and coaches the tools
+              they need to track progress, craft performance-driven sessions,
+              and turn potential into performance.
+            </Text>
+            <Box className={classes.controlContainer}>
+              <Anchor
+                href="https://test.statlysports.com/players"
+                target="_blank"
+              >
+                <Button
+                  variant="outline"
+                  size="xl"
+                  className={classes.control}
+                  rightSection={
+                    <IconBallBaseball
+                      stroke={2}
+                      style={{
+                        marginBottom: "-5px",
+                      }}
+                    />
+                  }
+                >
+                  Explore the Test Site
+                </Button>
+              </Anchor>
+            </Box>
           </Box>
-        </Box>
+        </Fade>
       </Box>
     </Box>
   );

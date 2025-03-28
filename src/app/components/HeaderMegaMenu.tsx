@@ -23,6 +23,7 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./HeaderMegaMenu.module.css";
+import { Fade } from "react-awesome-reveal";
 
 const mockdata = [
   {
@@ -60,7 +61,6 @@ const mockdata = [
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
-  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
 
   const handleNavClick = (id: string) => {
@@ -73,68 +73,54 @@ export function HeaderMegaMenu() {
     }
   };
 
-  const links = mockdata.map((item) => (
-    <UnstyledButton className={classes.subLink} key={item.title}>
-      <Group wrap="nowrap" align="flex-start">
-        <ThemeIcon size={34} variant="default" radius="md">
-          <item.icon size={22} color={theme.colors.blue[6]} />
-        </ThemeIcon>
-        <div>
-          <Text size="sm" fw={500}>
-            {item.title}
-          </Text>
-          <Text size="xs" c="dimmed">
-            {item.description}
-          </Text>
-        </div>
-      </Group>
-    </UnstyledButton>
-  ));
-
   return (
     <Box>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Image
-            src="statlysports-logo-1.svg"
-            alt="Statly Sports Logo"
-            height={35}
-          />
+          <Fade direction="up" duration={900} triggerOnce>
+            <Image
+              src="statlysports-logo-1.svg"
+              alt="Statly Sports Logo"
+              height={35}
+            />
+          </Fade>
           <Box>
-            <Group h="100%" gap={0} visibleFrom="sm">
-              <Anchor
-                href="#whoWeAre"
-                className={classes.link}
-                underline="never"
-              >
-                About
-              </Anchor>
-              <Anchor
-                href="#hittrax"
-                className={classes.link}
-                underline="never"
-              >
-                Hittrax
-              </Anchor>
-              <Anchor
-                href="#trainingPackages"
-                className={classes.link}
-                underline="never"
-              >
-                Training Packages
-              </Anchor>
-              <Anchor
-                href="#contactUs"
-                className={classes.link}
-                underline="never"
-              >
-                Contact Us
-              </Anchor>
-            </Group>
+            <Fade direction="up" duration={900} triggerOnce>
+              <Group h="100%" gap={0} visibleFrom="sm">
+                <Anchor
+                  href="#whoWeAre"
+                  className={classes.link}
+                  underline="never"
+                >
+                  About
+                </Anchor>
+                <Anchor
+                  href="#hittrax"
+                  className={classes.link}
+                  underline="never"
+                >
+                  Hittrax
+                </Anchor>
+                <Anchor
+                  href="#trainingPackages"
+                  className={classes.link}
+                  underline="never"
+                >
+                  Training Packages
+                </Anchor>
+                <Anchor
+                  href="#contactUs"
+                  className={classes.link}
+                  underline="never"
+                >
+                  Contact Us
+                </Anchor>
+              </Group>
 
-            <Group visibleFrom="sm">
-              {/* Keep this Group element for proper spacing on desktop */}
-            </Group>
+              <Group visibleFrom="sm">
+                {/* Keep this Group element for proper spacing on desktop */}
+              </Group>
+            </Fade>
           </Box>
           <Burger
             opened={drawerOpened}
@@ -144,7 +130,6 @@ export function HeaderMegaMenu() {
           />
         </Group>
       </header>
-
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
@@ -154,7 +139,7 @@ export function HeaderMegaMenu() {
           <Image
             src="statlysports-logo-1.svg"
             alt="Statly Sports Logo"
-            height={30}
+            height={35}
           />
         }
         hiddenFrom="sm"
@@ -162,7 +147,6 @@ export function HeaderMegaMenu() {
       >
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
-
           <Anchor
             href="#whoWeAre"
             onClick={(e) => {

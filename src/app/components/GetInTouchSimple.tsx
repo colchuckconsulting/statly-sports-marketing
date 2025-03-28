@@ -5,14 +5,13 @@ import {
   SimpleGrid,
   Textarea,
   TextInput,
-  Title,
   Container,
   useMantineTheme,
   Center,
   Text,
 } from "@mantine/core";
 import classes from "./GetInTouchSimple.module.css";
-import { useForm } from "@mantine/form";
+import { isEmail, useForm, hasLength } from "@mantine/form";
 import { IconSend } from "@tabler/icons-react";
 
 export function GetInTouchSimple() {
@@ -25,25 +24,27 @@ export function GetInTouchSimple() {
       message: "",
     },
     validate: {
-      name: (value) => value.trim().length < 2,
-      email: (value) => !/^\S+@\S+$/.test(value),
-      subject: (value) => value.trim().length === 0,
+      name: hasLength(
+        { min: 2 },
+        "That's a short one! Try at least 2 characters."
+      ),
+      email: isEmail(
+        "Enter an email like name@example.com. Don't worry, we won't spam you."
+      ),
+      subject: hasLength(
+        { min: 10 },
+        "Subject should be more descriptive (at least 10 characters)."
+      ),
+      message: hasLength(
+        { min: 20 },
+        "Tell us a bit more — message should be at least 20 characters long."
+      ),
     },
   });
 
   return (
     <form onSubmit={form.onSubmit(() => {})} id="contactUs">
       <Container size="lg" mt="xl" mb="xl">
-        {/* <Title
-          order={2}
-          size="h1"
-          fw={900}
-          ta="center"
-          c={theme.other.statlySportsGray}
-        >
-          Contact Us
-        </Title> */}
-
         <Center>
           <Text
             component="span"

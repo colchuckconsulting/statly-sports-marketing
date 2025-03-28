@@ -45,6 +45,7 @@ export function GameChangerAthleticism() {
         <Checkbox
           aria-label="Select row"
           checked={selectedRows.includes(playerStat.atBats)}
+          color={theme.other.statlySportsRed}
           onChange={(event) =>
             setSelectedRows(
               event.currentTarget.checked

@@ -50,7 +50,7 @@ export const theme = createTheme({
     statlySportsBlue: "#002859",
     statlySportsLightBlue: "var(--mantine-color-blue-6)" /* #228be6 */,
     statlySportsRed: "#ff0000",
-    statlySportsGray: "var(--mantine-color-gray-5)" /* 868e96 */,
+    statlySportsGray: "var(--mantine-color-gray-5)" /* adb5bd */,
     statlySportsFontIndustryLight: `${industryLight.style.fontFamily}`,
     statlySportsFontEnforceItalic: `${enforceItalic.style.fontFamily}`,
     statlySportsFontBebasNeue: `${bebasNeue.style.fontFamily}`,
