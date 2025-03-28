@@ -32,37 +32,41 @@ export function GameChangerAthleticism() {
 
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
-  const rows = playerStats.map((playerStat, index) => (
-    <Table.Tr
-      key={index}
-      bg={
-        selectedRows.includes(playerStat.atBats)
-          ? "var(--mantine-color-blue-light)"
-          : undefined
-      }
-    >
-      <Table.Td>
-        <Checkbox
-          aria-label="Select row"
-          checked={selectedRows.includes(playerStat.atBats)}
-          color={theme.other.statlySportsRed}
-          onChange={(event) =>
-            setSelectedRows(
-              event.currentTarget.checked
-                ? [...selectedRows, playerStat.atBats]
-                : selectedRows.filter((atBats) => atBats !== playerStat.atBats)
-            )
-          }
-        />
-      </Table.Td>
-      <Table.Td>{playerStat.atBats}</Table.Td>
-      <Table.Td>{playerStat.runs}</Table.Td>
-      <Table.Td>{playerStat.hits}</Table.Td>
-      <Table.Td>{playerStat.ops.toFixed(3)}</Table.Td>
-      <Table.Td>{playerStat.rbi}</Table.Td>
-      <Table.Td>{playerStat.sb}</Table.Td>
-    </Table.Tr>
-  ));
+  const rows = playerStats.map((playerStat, index) => {
+    const isSelected = selectedRows.includes(playerStat.atBats);
+
+    const toggleSelection = () => {
+      setSelectedRows((prev) =>
+        isSelected
+          ? prev.filter((atBats) => atBats !== playerStat.atBats)
+          : [...prev, playerStat.atBats]
+      );
+    };
+
+    return (
+      <Table.Tr
+        key={index}
+        onClick={toggleSelection}
+        style={{ cursor: "pointer" }}
+        bg={isSelected ? "var(--mantine-color-blue-light)" : undefined}
+      >
+        <Table.Td onClick={(e) => e.stopPropagation()}>
+          <Checkbox
+            aria-label="Select row"
+            checked={isSelected}
+            color={theme.other.statlySportsRed}
+            onChange={toggleSelection}
+          />
+        </Table.Td>
+        <Table.Td>{playerStat.atBats}</Table.Td>
+        <Table.Td>{playerStat.runs}</Table.Td>
+        <Table.Td>{playerStat.hits}</Table.Td>
+        <Table.Td>{playerStat.ops.toFixed(3)}</Table.Td>
+        <Table.Td>{playerStat.rbi}</Table.Td>
+        <Table.Td>{playerStat.sb}</Table.Td>
+      </Table.Tr>
+    );
+  });
 
   return (
     <Container size="xl" mih={600}>
