@@ -3,14 +3,11 @@ import { useState } from "react";
 import {
   Container,
   Text,
-  Title,
   Grid,
   useMantineTheme,
-  Image,
   Box,
   Table,
   Checkbox,
-  Progress,
   Center,
 } from "@mantine/core";
 import { StatsRing } from "./StatsRing";
