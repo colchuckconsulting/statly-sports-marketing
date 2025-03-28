@@ -18,7 +18,11 @@ export function HeroImageBackground() {
       <Box className={classes.inner}>
         <Fade direction="up" duration={900} triggerOnce>
           <Box className={classes.content}>
-            <Title className={classes.title}>
+            <Title
+              className={classes.title}
+              pl={{ base: "xs", sm: "0" }}
+              pr={{ base: "xs", sm: "0" }}
+            >
               From{" "}
               <Text component="span" inherit td="underline">
                 Practice to Pro
