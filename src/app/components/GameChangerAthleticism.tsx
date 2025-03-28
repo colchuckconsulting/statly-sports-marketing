@@ -67,15 +67,23 @@ export function GameChangerAthleticism() {
     <Container size="xl" mih={600}>
       <Grid>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          {/* Todo possibly on mobile switch to smaller logo */}
-          {/* <Image
-            src="gamechanger-logo-5.svg"
-            alt="Game Changer Logo"
-            mt={"-30px"}
-          /> */}
-          <Title ta={"center"} c={theme.other.statlySportsLightBlue} fz={60}>
-            GameChanger
-          </Title>
+          <Center>
+            <Text
+              component="span"
+              inherit
+              variant="gradient"
+              gradient={{
+                from: theme.other.statlySportsBlue,
+                to: theme.other.statlySportsRed,
+                deg: 160,
+              }}
+              ff={theme.other.statlySportsFontBebasNeue}
+              fz={70}
+              ta={"center"}
+            >
+              GameChanger
+            </Text>
+          </Center>
           <Text mt="md">
             Statly Sports integrates directly with GameChanger, providing
             real-time statistics and detailed performance data. This integration
@@ -87,7 +95,7 @@ export function GameChangerAthleticism() {
             <Table striped highlightOnHover mt="lg">
               <Table.Thead
                 style={{
-                  backgroundColor: theme.other.statlySportsLightBlue,
+                  backgroundColor: theme.other.statlySportsBlue,
                   color: theme.white,
                 }}
               >
@@ -126,9 +134,23 @@ export function GameChangerAthleticism() {
           </Box>
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          <Title ta={"center"} c={theme.other.statlySportsRed} fz={60}>
-            Athleticism
-          </Title>
+          <Center>
+            <Text
+              component="span"
+              inherit
+              variant="gradient"
+              gradient={{
+                from: theme.other.statlySportsBlue,
+                to: theme.other.statlySportsRed,
+                deg: 160,
+              }}
+              ff={theme.other.statlySportsFontBebasNeue}
+              fz={70}
+              ta={"center"}
+            >
+              Athleticism
+            </Text>
+          </Center>
           <Text mt="md">
             Statly Sports Athleticism tracks key metrics like speed, agility,
             and strength, helping coaches and players quickly identify areas for

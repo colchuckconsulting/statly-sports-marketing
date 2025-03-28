@@ -30,9 +30,10 @@ export function HeroImageBackground() {
           </Title>
 
           <Text className={classes.description} mt={30}>
-            Build fully functional accessible web applications with ease –
-            Mantine includes more than 100 customizable components and hooks to
-            cover you in any situation
+            Whether you're training in the offseason or chasing greatness
+            year-round, Statly Sports gives athletes and coaches the tools they
+            need to track progress, craft performance-driven sessions, and turn
+            potential into performance.
           </Text>
           <Box className={classes.controlContainer}>
             <Button

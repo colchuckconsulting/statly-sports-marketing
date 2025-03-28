@@ -2,7 +2,6 @@
 import {
   IconBook,
   IconChartPie3,
-  IconChevronDown,
   IconCode,
   IconCoin,
   IconFingerprint,
@@ -12,15 +11,10 @@ import {
   Anchor,
   Box,
   Burger,
-  Button,
-  Center,
-  Collapse,
   Divider,
   Drawer,
   Group,
-  HoverCard,
   ScrollArea,
-  SimpleGrid,
   Text,
   ThemeIcon,
   UnstyledButton,
@@ -28,7 +22,6 @@ import {
   Image,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-// import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./HeaderMegaMenu.module.css";
 
 const mockdata = [
@@ -70,6 +63,16 @@ export function HeaderMegaMenu() {
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
 
+  const handleNavClick = (id: string) => {
+    const el = document.querySelector(id);
+    if (el) {
+      closeDrawer();
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth" });
+      }, 100); // Small delay to ensure drawer is closed first
+    }
+  };
+
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
@@ -95,73 +98,44 @@ export function HeaderMegaMenu() {
           <Image
             src="statlysports-logo-1.svg"
             alt="Statly Sports Logo"
-            height={30}
+            height={35}
           />
-          <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className={classes.link}>
-              Home
-            </a>
-            <HoverCard
-              width={600}
-              position="bottom"
-              radius="md"
-              shadow="md"
-              withinPortal
-            >
-              <HoverCard.Target>
-                <a href="#" className={classes.link}>
-                  <Center inline>
-                    <Box component="span" mr={5}>
-                      Features
-                    </Box>
-                    <IconChevronDown size={16} color={theme.colors.blue[6]} />
-                  </Center>
-                </a>
-              </HoverCard.Target>
+          <Box>
+            <Group h="100%" gap={0} visibleFrom="sm">
+              <Anchor
+                href="#whoWeAre"
+                className={classes.link}
+                underline="never"
+              >
+                About
+              </Anchor>
+              <Anchor
+                href="#hittrax"
+                className={classes.link}
+                underline="never"
+              >
+                Hittrax
+              </Anchor>
+              <Anchor
+                href="#trainingPackages"
+                className={classes.link}
+                underline="never"
+              >
+                Training Packages
+              </Anchor>
+              <Anchor
+                href="#contactUs"
+                className={classes.link}
+                underline="never"
+              >
+                Contact Us
+              </Anchor>
+            </Group>
 
-              <HoverCard.Dropdown style={{ overflow: "hidden" }}>
-                <Group justify="space-between" px="md">
-                  <Text fw={500}>Features</Text>
-                  <Anchor href="#" fz="xs">
-                    View all
-                  </Anchor>
-                </Group>
-
-                <Divider my="sm" />
-
-                <SimpleGrid cols={2} spacing={0}>
-                  {links}
-                </SimpleGrid>
-
-                <div className={classes.dropdownFooter}>
-                  <Group justify="space-between">
-                    <div>
-                      <Text fw={500} fz="sm">
-                        Get started
-                      </Text>
-                      <Text size="xs" c="dimmed">
-                        Their food sources have decreased, and their numbers
-                      </Text>
-                    </div>
-                    <Button variant="default">Get started</Button>
-                  </Group>
-                </div>
-              </HoverCard.Dropdown>
-            </HoverCard>
-            <a href="#" className={classes.link}>
-              Learn
-            </a>
-            <a href="#" className={classes.link}>
-              Academy
-            </a>
-          </Group>
-
-          <Group visibleFrom="sm">
-            {/* Keep this Group element for proper spacing on desktop */}
-            {/* <Button variant="default">Log in</Button>
-            <Button>Sign up</Button> */}
-          </Group>
-
+            <Group visibleFrom="sm">
+              {/* Keep this Group element for proper spacing on desktop */}
+            </Group>
+          </Box>
           <Burger
             opened={drawerOpened}
             onClick={toggleDrawer}
@@ -176,38 +150,65 @@ export function HeaderMegaMenu() {
         onClose={closeDrawer}
         size="100%"
         padding="md"
-        title="Navigation"
+        title={
+          <Image
+            src="statlysports-logo-1.svg"
+            alt="Statly Sports Logo"
+            height={30}
+          />
+        }
         hiddenFrom="sm"
         zIndex={1000000}
       >
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
 
-          <a href="#" className={classes.link}>
-            Home
-          </a>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
-            <Center inline>
-              <Box component="span" mr={5}>
-                Features
-              </Box>
-              <IconChevronDown size={16} color={theme.colors.blue[6]} />
-            </Center>
-          </UnstyledButton>
-          <Collapse in={linksOpened}>{links}</Collapse>
-          <a href="#" className={classes.link}>
-            Learn
-          </a>
-          <a href="#" className={classes.link}>
-            Academy
-          </a>
+          <Anchor
+            href="#whoWeAre"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#whoWeAre");
+            }}
+            className={classes.link}
+            underline="never"
+          >
+            About
+          </Anchor>
+          <Anchor
+            href="#hittrax"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#hittrax");
+            }}
+            className={classes.link}
+            underline="never"
+          >
+            Hittrax
+          </Anchor>
+          <Anchor
+            href="#trainingPackages"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#trainingPackages");
+            }}
+            className={classes.link}
+            underline="never"
+          >
+            Training Packages
+          </Anchor>
+          <Anchor
+            href="#contactUs"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#contactUs");
+            }}
+            className={classes.link}
+            underline="never"
+          >
+            Contact Us
+          </Anchor>
 
           <Divider my="sm" />
-
-          <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
         </ScrollArea>
       </Drawer>
     </Box>

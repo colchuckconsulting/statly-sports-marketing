@@ -11,6 +11,7 @@ export function WhoWeAre() {
         mt={"xl"}
         fz={{ base: "34px", sm: "60px" }}
         ta={{ base: "center", sm: "left" }}
+        id="whoWeAre"
       >
         At Statly Sports, we empower athletes of all levels. Our platform tracks
         performance, provides detailed analytics, and offers integrated payment

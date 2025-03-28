@@ -14,7 +14,7 @@ import { HittraxData } from "./HittraxData";
 export function HittraxIntegration() {
   const theme = useMantineTheme();
   return (
-    <Container size="xl">
+    <Container size="xl" id="hittrax">
       <Box
         bg={"black"}
         style={{

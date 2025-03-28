@@ -39,7 +39,7 @@
   font-weight: 900;
   line-height: 1.05;
   max-width: 500px;
-  font-size: 48px;
+  font-size: 60px;
   text-align: right;
 
   @media (max-width: $mantine-breakpoint-md) {
@@ -54,7 +54,7 @@
   color: var(--mantine-color-white);
   max-width: 500px;
   text-align: right;
-
+  font-weight: 600;
   @media (max-width: $mantine-breakpoint-md) {
     max-width: 100%;
     text-align: center;

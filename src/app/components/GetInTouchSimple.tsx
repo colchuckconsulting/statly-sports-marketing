@@ -8,8 +8,12 @@ import {
   Title,
   Container,
   useMantineTheme,
+  Center,
+  Text,
 } from "@mantine/core";
+import classes from "./GetInTouchSimple.module.css";
 import { useForm } from "@mantine/form";
+import { IconSend } from "@tabler/icons-react";
 
 export function GetInTouchSimple() {
   const theme = useMantineTheme();
@@ -28,9 +32,9 @@ export function GetInTouchSimple() {
   });
 
   return (
-    <form onSubmit={form.onSubmit(() => {})}>
+    <form onSubmit={form.onSubmit(() => {})} id="contactUs">
       <Container size="lg" mt="xl" mb="xl">
-        <Title
+        {/* <Title
           order={2}
           size="h1"
           fw={900}
@@ -38,7 +42,25 @@ export function GetInTouchSimple() {
           c={theme.other.statlySportsGray}
         >
           Contact Us
-        </Title>
+        </Title> */}
+
+        <Center>
+          <Text
+            component="span"
+            inherit
+            variant="gradient"
+            gradient={{
+              from: theme.other.statlySportsBlue,
+              to: theme.other.statlySportsRed,
+              deg: 160,
+            }}
+            ff={theme.other.statlySportsFontBebasNeue}
+            fz={70}
+            ta={"center"}
+          >
+            Contact Us{" "}
+          </Text>
+        </Center>
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
           <TextInput
@@ -79,7 +101,20 @@ export function GetInTouchSimple() {
 
         <Group justify="center" mt="xl">
           {/* Todo update primary styling for button */}
-          <Button type="submit" size="md" color={theme.other.statlySportsBlue}>
+          <Button
+            type="submit"
+            size="lg"
+            className={classes.sendMessageBtn}
+            radius="xl"
+            rightSection={
+              <IconSend
+                stroke={2}
+                style={{
+                  marginBottom: "-3px",
+                }}
+              />
+            }
+          >
             Send message
           </Button>
         </Group>

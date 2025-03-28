@@ -11,7 +11,6 @@ export function FooterSocial() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        {/* <MantineLogo size={28} /> */}
         <Image
           src="statlysports-logo-2.svg"
           alt="Statly Sports Logo"
@@ -23,28 +22,11 @@ export function FooterSocial() {
           justify="flex-end"
           wrap="nowrap"
         >
-          <ActionIcon size="lg" color="gray" variant="default" radius={"xl"}>
-            <IconBrandTwitter size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon
-            size="lg"
-            color="gray"
-            variant="default"
-            radius={"xl"}
-            ml="xs"
-          >
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
-          {/* <ActionIcon
-            size="lg"
-            // color="gray"
-            variant="default"
-            radius={"xl"}
-            ml="xs"
-          > */}
-          {/* <IconBrandInstagram size={18} stroke={1.5} /> */}
-          <Image src="instagram.svg" width={"20px"} height={"20px"} ml="sm" />
-          {/* </ActionIcon> */}
+          <Image src="linkedin.svg" className={classes.iconHover} />
+          <Image src="facebook.svg" ml="md" className={classes.iconHover} />
+          <Image src="twitter.svg" ml="md" className={classes.iconHover} />
+          <Image src="youtube.svg" ml="md" className={classes.iconHover} />
+          <Image src="instagram.svg" ml="md" className={classes.iconHover} />
         </Group>
       </Container>
     </div>

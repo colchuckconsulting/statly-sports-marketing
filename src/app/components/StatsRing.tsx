@@ -72,7 +72,7 @@ export function StatsRing() {
         key={stat.label}
         mt="sm"
         w={360}
-        ml={index * 50} // 0, 16, 32, etc.
+        ml={index * 20} // 0, 16, 32, etc.
         className={classes.card}
       >
         <Center>

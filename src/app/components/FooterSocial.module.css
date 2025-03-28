@@ -18,6 +18,16 @@
 
 .links {
   @media (max-width: $mantine-breakpoint-xs) {
-    margin-top: var(--mantine-spacing-md);
+    margin-top: var(--mantine-spacing-lg);
+  }
+}
+
+.iconHover {
+  height: 20px;
+  width: 20px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(18deg);
   }
 }
