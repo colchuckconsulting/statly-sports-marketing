@@ -15,7 +15,7 @@ import { Fade } from "react-awesome-reveal";
 export function HeroImageBackground() {
   const theme = useMantineTheme();
   return (
-    <BackgroundImage src="baseball-backgroundImage.jpg" h="100vh">
+    <BackgroundImage src="baseball-backgroundimage.jpg" h="100vh">
       <Box className={classes.inner}>
         <Fade direction="up" duration={900} triggerOnce>
           <Box className={classes.content}>
