@@ -6,6 +6,7 @@ import {
   Title,
   useMantineTheme,
   Anchor,
+  BackgroundImage,
 } from "@mantine/core";
 import classes from "./HeroImageBackground.module.css";
 import { IconBallBaseball } from "@tabler/icons-react";
@@ -14,7 +15,7 @@ import { Fade } from "react-awesome-reveal";
 export function HeroImageBackground() {
   const theme = useMantineTheme();
   return (
-    <Box className={classes.root}>
+    <BackgroundImage src="baseball-backgroundImage.jpg" h="100vh">
       <Box className={classes.inner}>
         <Fade direction="up" duration={900} triggerOnce>
           <Box className={classes.content}>
@@ -73,6 +74,6 @@ export function HeroImageBackground() {
           </Box>
         </Fade>
       </Box>
-    </Box>
+    </BackgroundImage>
   );
 }
