@@ -7,7 +7,6 @@ import {
   Image,
   Box,
   useMantineTheme,
-  Button,
   Center,
 } from "@mantine/core";
 import classes from "./TrainingPackages.module.css";
@@ -68,9 +67,9 @@ export function TrainingPackages() {
       </Center>
       <Text mb="md">
         With Statly Sports, administrators have full control to create and
-        customize training packages for their clients. Whether it's speed,
+        customize training packages for their clients. Whether it&apos;s speed,
         strength, agility, or a combination of all three — you can build a
-        package that fits your athletes' needs.
+        package that fits your athletes&apos; needs.
       </Text>
       <Text mb="xl">
         Set pricing, define the number of sessions, and adjust availability for

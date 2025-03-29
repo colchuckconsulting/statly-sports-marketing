@@ -1,10 +1,4 @@
-import {
-  IconBrandInstagram,
-  IconBrandTwitter,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
-import { ActionIcon, Container, Group, Image } from "@mantine/core";
-// import { MantineLogo } from "@mantinex/mantine-logo";
+import { Container, Group, Image } from "@mantine/core";
 import classes from "./FooterSocial.module.css";
 
 export function FooterSocial() {
@@ -22,11 +16,35 @@ export function FooterSocial() {
           justify="flex-end"
           wrap="nowrap"
         >
-          <Image src="linkedin.svg" className={classes.iconHover} />
-          <Image src="facebook.svg" ml="md" className={classes.iconHover} />
-          <Image src="twitter.svg" ml="md" className={classes.iconHover} />
-          <Image src="youtube.svg" ml="md" className={classes.iconHover} />
-          <Image src="instagram.svg" ml="md" className={classes.iconHover} />
+          <Image
+            src="linkedin.svg"
+            alt="linkedin icon"
+            className={classes.iconHover}
+          />
+          <Image
+            src="facebook.svg"
+            alt="facebook icon"
+            ml="md"
+            className={classes.iconHover}
+          />
+          <Image
+            src="twitter.svg"
+            alt="twitter icon"
+            ml="md"
+            className={classes.iconHover}
+          />
+          <Image
+            src="youtube.svg"
+            alt="youtube icon"
+            ml="md"
+            className={classes.iconHover}
+          />
+          <Image
+            src="instagram.svg"
+            alt="instagram icon"
+            ml="md"
+            className={classes.iconHover}
+          />
         </Group>
       </Container>
     </div>

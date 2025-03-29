@@ -14,20 +14,20 @@ const bebasNeue = Bebas_Neue({
   preload: true,
 });
 
-const enforce = localFont({
-  src: "../../public/fonts/enforce/Enforce.ttf",
-  display: "swap",
-});
+// const enforce = localFont({
+//   src: "../../public/fonts/enforce/Enforce.ttf",
+//   display: "swap",
+// });
 
 const enforceItalic = localFont({
   src: "../../public/fonts/enforce/Enforce-Italic.ttf",
   display: "swap",
 });
 
-const industryUltra = localFont({
-  src: "../../public/fonts/industry/IndustryTest-Ultra.otf",
-  display: "swap",
-});
+// const industryUltra = localFont({
+//   src: "../../public/fonts/industry/IndustryTest-Ultra.otf",
+//   display: "swap",
+// });
 
 const industryMedium = localFont({
   src: "../../public/fonts/industry/IndustryTest-Medium.otf",

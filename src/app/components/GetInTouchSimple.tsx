@@ -84,7 +84,7 @@ export function GetInTouchSimple() {
             withBorder
             onClose={() => setSubmitted(false)}
           >
-            Thanks for reaching out — we'll get back to you shortly.
+            Thanks for reaching out — we&apos;ll get back to you shortly.
           </Notification>
         </Container>
       )}
