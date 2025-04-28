@@ -62,6 +62,7 @@
   @media (max-width: $mantine-breakpoint-md) {
     margin-left: var(--mantine-spacing-md);
     margin-right: var(--mantine-spacing-md);
+    justify-content: center;
   }
 }
 

@@ -82,6 +82,7 @@ export function GameChangerAthleticism() {
               ff={theme.other.statlySportsFontBebasNeue}
               fz={70}
               ta={"center"}
+              id="gamechanger"
             >
               GameChanger
             </Text>
@@ -149,6 +150,7 @@ export function GameChangerAthleticism() {
               ff={theme.other.statlySportsFontBebasNeue}
               fz={70}
               ta={"center"}
+              id="athleticism"
             >
               Athleticism
             </Text>

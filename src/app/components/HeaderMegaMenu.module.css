@@ -1,3 +1,13 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .header {
   position: absolute; /* positions the header on top */
   top: 0;
@@ -49,4 +59,34 @@
 .link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.linkHovered {
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.caretIcon {
+  transition: transform 0.5s ease;
+}
+
+.caretFlipped {
+  transform: rotate(180deg);
+}
+
+.subLink {
+  display: block;
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-xs);
+  background-color: var(--mantine-color-gray-0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@media (hover: hover) and (min-width: 48em) {
+  .subLink:hover {
+    transform: scale(1.03);
+    background-color: var(--mantine-color-gray-2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
 }
