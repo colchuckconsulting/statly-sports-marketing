@@ -11,6 +11,7 @@ import {
   Center,
 } from "@mantine/core";
 import { StatsRing } from "./StatsRing";
+import { Fade } from "react-awesome-reveal";
 
 const playerStats = [
   { atBats: 55, runs: 28, hits: 29, ops: 1.6, rbi: 25, sb: 7 },
@@ -21,7 +22,6 @@ const playerStats = [
   { atBats: 53, runs: 26, hits: 26, ops: 1.3, rbi: 20, sb: 10 },
   { atBats: 58, runs: 27, hits: 30, ops: 1.6, rbi: 24, sb: 11 },
   { atBats: 46, runs: 21, hits: 23, ops: 1.3, rbi: 18, sb: 6 },
-  // { atBats: 62, runs: 31, hits: 34, ops: 1.8, rbi: 30, sb: 9 },
 ];
 
 export function GameChangerAthleticism() {
@@ -69,101 +69,103 @@ export function GameChangerAthleticism() {
     <Container size="xl" mih={600}>
       <Grid>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          <Center>
-            <Text
-              component="span"
-              inherit
-              variant="gradient"
-              gradient={{
-                from: theme.other.statlySportsBlue,
-                to: theme.other.statlySportsRed,
-                deg: 160,
-              }}
-              ff={theme.other.statlySportsFontBebasNeue}
-              fz={70}
-              ta={"center"}
-              id="gamechanger"
-            >
-              GameChanger
-            </Text>
-          </Center>
-          <Text mt="md">
-            Statly Sports integrates directly with GameChanger, providing
-            real-time statistics and detailed performance data. This integration
-            allows you to seamlessly view and analyze player metrics alongside
-            comprehensive athleticism insights, enhancing your ability to track
-            and improve player performance.
-          </Text>
-          <Box>
-            <Table striped highlightOnHover mt="lg">
-              <Table.Thead
-                style={{
-                  backgroundColor: theme.other.statlySportsBlue,
-                  color: theme.white,
+          <Fade direction="up" triggerOnce>
+            <Center>
+              <Text
+                component="span"
+                inherit
+                variant="gradient"
+                gradient={{
+                  from: theme.other.statlySportsBlue,
+                  to: theme.other.statlySportsRed,
+                  deg: 160,
                 }}
+                ff={theme.other.statlySportsFontBebasNeue}
+                fz={70}
+                ta="center"
+                id="gamechanger"
               >
-                <Table.Tr>
-                  <Table.Th />
-                  <Table.Th>
-                    <Box visibleFrom="sm">At Bats</Box>
-                    <Box hiddenFrom="sm">AB</Box>
-                  </Table.Th>
-                  <Table.Th>
-                    <Box visibleFrom="sm">Runs</Box>
-                    <Box hiddenFrom="sm">R</Box>
-                  </Table.Th>
-                  <Table.Th>
-                    {" "}
-                    <Box visibleFrom="sm">Hits</Box>
-                    <Box hiddenFrom="sm">H</Box>
-                  </Table.Th>
-                  <Table.Th>
-                    <Box visibleFrom="sm">On-base plus slugging</Box>
-                    <Box hiddenFrom="sm">OPS</Box>
-                  </Table.Th>
-                  <Table.Th>
-                    <Box visibleFrom="sm">Runs Batted In</Box>
-                    <Box hiddenFrom="sm">RBI</Box>
-                  </Table.Th>
-                  <Table.Th>
-                    {" "}
-                    <Box visibleFrom="sm">Stolen Bases</Box>
-                    <Box hiddenFrom="sm">SB</Box>
-                  </Table.Th>
-                </Table.Tr>
-              </Table.Thead>
-              <Table.Tbody>{rows}</Table.Tbody>
-            </Table>
-          </Box>
+                GameChanger
+              </Text>
+            </Center>
+            <Text mt="md">
+              Statly Sports integrates directly with GameChanger, providing
+              real-time statistics and detailed performance data. This
+              integration allows you to seamlessly view and analyze player
+              metrics alongside comprehensive athleticism insights, enhancing
+              your ability to track and improve player performance.
+            </Text>
+            <Box>
+              <Table striped highlightOnHover mt="lg">
+                <Table.Thead
+                  style={{
+                    backgroundColor: theme.other.statlySportsBlue,
+                    color: theme.white,
+                  }}
+                >
+                  <Table.Tr>
+                    <Table.Th />
+                    <Table.Th>
+                      <Box visibleFrom="sm">At Bats</Box>
+                      <Box hiddenFrom="sm">AB</Box>
+                    </Table.Th>
+                    <Table.Th>
+                      <Box visibleFrom="sm">Runs</Box>
+                      <Box hiddenFrom="sm">R</Box>
+                    </Table.Th>
+                    <Table.Th>
+                      <Box visibleFrom="sm">Hits</Box>
+                      <Box hiddenFrom="sm">H</Box>
+                    </Table.Th>
+                    <Table.Th>
+                      <Box visibleFrom="sm">On-base plus slugging</Box>
+                      <Box hiddenFrom="sm">OPS</Box>
+                    </Table.Th>
+                    <Table.Th>
+                      <Box visibleFrom="sm">Runs Batted In</Box>
+                      <Box hiddenFrom="sm">RBI</Box>
+                    </Table.Th>
+                    <Table.Th>
+                      <Box visibleFrom="sm">Stolen Bases</Box>
+                      <Box hiddenFrom="sm">SB</Box>
+                    </Table.Th>
+                  </Table.Tr>
+                </Table.Thead>
+                <Table.Tbody>{rows}</Table.Tbody>
+              </Table>
+            </Box>
+          </Fade>
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6 }}>
-          <Center>
-            <Text
-              component="span"
-              inherit
-              variant="gradient"
-              gradient={{
-                from: theme.other.statlySportsBlue,
-                to: theme.other.statlySportsRed,
-                deg: 160,
-              }}
-              ff={theme.other.statlySportsFontBebasNeue}
-              fz={70}
-              ta={"center"}
-              id="athleticism"
-            >
-              Athleticism
+          <Fade direction="down" triggerOnce>
+            <Center>
+              <Text
+                component="span"
+                inherit
+                variant="gradient"
+                gradient={{
+                  from: theme.other.statlySportsBlue,
+                  to: theme.other.statlySportsRed,
+                  deg: 160,
+                }}
+                ff={theme.other.statlySportsFontBebasNeue}
+                fz={70}
+                ta="center"
+                id="athleticism"
+              >
+                Athleticism
+              </Text>
+            </Center>
+            <Text mt="md">
+              Statly Sports Athleticism tracks key metrics like speed, agility,
+              and strength, helping coaches and players quickly identify areas
+              for improvement, measure ongoing progress, and enhance overall
+              on-field performance.
             </Text>
-          </Center>
-          <Text mt="md">
-            Statly Sports Athleticism tracks key metrics like speed, agility,
-            and strength, helping coaches and players quickly identify areas for
-            improvement, measure ongoing progress, and enhance overall on-field
-            performance.
-          </Text>
-          <Center>
-            <StatsRing />
-          </Center>
+            <Center>
+              <StatsRing />
+            </Center>
+          </Fade>
         </Grid.Col>
       </Grid>
     </Container>
