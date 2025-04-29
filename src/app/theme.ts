@@ -41,8 +41,21 @@ const industryLight = localFont({
 
 export const theme = createTheme({
   fontFamily: `${industryMedium.style.fontFamily}, ${DEFAULT_THEME.fontFamily}`,
-  // primaryColor: "#002859",
-  colors: {},
+  primaryColor: "statly-sports-blue",
+  colors: {
+    "statly-sports-blue": [
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+      "#002859",
+    ],
+  },
   headings: {
     fontFamily: `${bebasNeue.style.fontFamily}, ${DEFAULT_THEME.headings.fontFamily}`,
   },

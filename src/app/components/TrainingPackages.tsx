@@ -65,18 +65,20 @@ export function TrainingPackages() {
           Training Packages
         </Text>
       </Center>
-      <Text mb="md">
-        With Statly Sports, administrators have full control to create and
-        customize training packages for their clients. Whether it&apos;s speed,
-        strength, agility, or a combination of all three — you can build a
-        package that fits your athletes&apos; needs.
-      </Text>
-      <Text mb="xl">
-        Set pricing, define the number of sessions, and adjust availability for
-        each package, all from your admin dashboard.
-      </Text>
-      <Box mt="xl">
+      <Container size="sm" mb="lg">
+        <Text mb="md">
+          With Statly Sports, administrators have full control to create and
+          customize training packages for their clients. Whether it&apos;s
+          speed, strength, agility, or a combination of all three — you can
+          build a package that fits your athletes&apos; needs.
+        </Text>
+        <Text mb="xl">
+          Set pricing, define the number of sessions, and adjust availability
+          for each package, all from your admin dashboard.
+        </Text>
         <Text mb="md">Your Lesson Options:</Text>
+      </Container>
+      <Box mt="xl">
         <Grid>
           {cardData.map((card, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 6, lg: 3 }}>
