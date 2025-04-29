@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Container,
   Text,
@@ -9,6 +10,7 @@ import {
   useMantineTheme,
   Center,
 } from "@mantine/core";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import classes from "./TrainingPackages.module.css";
 
 const cardData = [
@@ -48,79 +50,80 @@ export function TrainingPackages() {
   return (
     <Container size="xl" mt="lg">
       <Center>
-        <Text
-          component="span"
-          inherit
-          variant="gradient"
-          gradient={{
-            from: theme.other.statlySportsBlue,
-            to: theme.other.statlySportsRed,
-            deg: 160,
-          }}
-          ff={theme.other.statlySportsFontBebasNeue}
-          fz={70}
-          ta={"center"}
-          id="trainingPackages"
-        >
-          Training Packages
-        </Text>
+        <Slide direction="down" triggerOnce>
+          <Text
+            component="span"
+            inherit
+            variant="gradient"
+            gradient={{
+              from: theme.other.statlySportsBlue,
+              to: theme.other.statlySportsRed,
+              deg: 160,
+            }}
+            ff={theme.other.statlySportsFontBebasNeue}
+            fz={70}
+            ta="center"
+            id="trainingPackages"
+          >
+            Training Packages
+          </Text>
+        </Slide>
       </Center>
+
       <Container size="sm" mb="lg">
-        <Text mb="md">
-          With Statly Sports, administrators have full control to create and
-          customize training packages for their clients. Whether it&apos;s
-          speed, strength, agility, or a combination of all three — you can
-          build a package that fits your athletes&apos; needs.
-        </Text>
-        <Text mb="xl">
-          Set pricing, define the number of sessions, and adjust availability
-          for each package, all from your admin dashboard.
-        </Text>
-        <Text mb="md">Your Lesson Options:</Text>
+        <Fade direction="up" cascade triggerOnce damping={0.2}>
+          <Text mb="md">
+            With Statly Sports, administrators have full control to create and
+            customize training packages for their clients. Whether it&apos;s
+            speed, strength, agility, or a combination of all three — you can
+            build a package that fits your athletes&apos; needs.
+          </Text>
+          <Text mb="xl">
+            Set pricing, define the number of sessions, and adjust availability
+            for each package, all from your admin dashboard.
+          </Text>
+          <Text mb="md" fw={700}>
+            Your Lesson Options:
+          </Text>
+        </Fade>
       </Container>
+
       <Box mt="xl">
         <Grid>
           {cardData.map((card, index) => (
             <Grid.Col key={index} span={{ base: 12, md: 6, lg: 3 }}>
-              <Box className={classes.cardWrap}>
-                <Box
-                  className={`${classes.cardHeader} ${
-                    classes[card.colorClass]
-                  }`}
-                >
-                  <Center style={{ height: "100%" }}>
-                    <Box
-                      style={{
-                        width: "100px",
-                        height: "100px",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginTop: "-30px",
-                      }}
-                    >
-                      <Image src={card.icon} alt={card.title} />
-                    </Box>
-                  </Center>
+              <Zoom delay={index * 100} triggerOnce>
+                <Box className={classes.cardWrap}>
+                  <Box
+                    className={`${classes.cardHeader} ${
+                      classes[card.colorClass]
+                    }`}
+                  >
+                    <Center style={{ height: "100%" }}>
+                      <Box
+                        style={{
+                          width: "100px",
+                          height: "100px",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          marginTop: "-30px",
+                        }}
+                      >
+                        <Image src={card.icon} alt={card.title} />
+                      </Box>
+                    </Center>
+                  </Box>
+                  <Box className={classes.cardContent}>
+                    <Title order={3} ta="center" mt="xs">
+                      {card.title}
+                    </Title>
+                    <Text mb="xs" ta="center">
+                      {card.description}
+                    </Text>
+                  </Box>
                 </Box>
-                <Box className={classes.cardContent}>
-                  <Title order={3} ta="center" mt="xs">
-                    {card.title}
-                  </Title>
-                  <Text mb="xs" ta="center">
-                    {card.description}
-                  </Text>
-                  {/* <Center mb="xs">
-                    <Button
-                      className={`${classes.cardBtn} ${
-                        classes[card.colorClass]
-                      }`}
-                    >
-                      Purchase
-                    </Button>
-                  </Center> */}
-                </Box>
-              </Box>
+              </Zoom>
             </Grid.Col>
           ))}
         </Grid>

@@ -12,6 +12,7 @@ import {
   Notification,
 } from "@mantine/core";
 import { useState } from "react";
+import { Fade, Slide } from "react-awesome-reveal";
 import classes from "./GetInTouchSimple.module.css";
 import { isEmail, useForm, hasLength } from "@mantine/form";
 import { IconSend, IconMailCheck } from "@tabler/icons-react";
@@ -56,15 +57,10 @@ export function GetInTouchSimple() {
       });
 
       if (response.ok) {
-        // success
-        console.log("Form submitted successfully");
-        // optionally reset form
         form.reset();
         setSubmitted(true);
-        // Auto-hide notification after 7 seconds
         setTimeout(() => setSubmitted(false), 7000);
       } else {
-        // error
         console.error("Submission failed:", response.statusText);
       }
     } catch (error) {
@@ -76,94 +72,103 @@ export function GetInTouchSimple() {
     <>
       {submitted && (
         <Container size="xs" mt="md">
-          <Notification
-            icon={<IconMailCheck size={20} />}
-            title="Message sent!"
-            color="var(--mantine-color-green-7)"
-            withCloseButton
-            withBorder
-            onClose={() => setSubmitted(false)}
-          >
-            Thanks for reaching out — we&apos;ll get back to you shortly.
-          </Notification>
+          <Fade direction="down" triggerOnce>
+            <Notification
+              icon={<IconMailCheck size={20} />}
+              title="Message sent!"
+              color="var(--mantine-color-green-7)"
+              withCloseButton
+              withBorder
+              onClose={() => setSubmitted(false)}
+            >
+              Thanks for reaching out — we&apos;ll get back to you shortly.
+            </Notification>
+          </Fade>
         </Container>
       )}
+
       <form onSubmit={form.onSubmit(handleSubmit)} id="contactUs">
         <Container size="lg" mt="xl" mb="xl">
           <Center>
-            <Text
-              component="span"
-              inherit
-              variant="gradient"
-              gradient={{
-                from: theme.other.statlySportsBlue,
-                to: theme.other.statlySportsRed,
-                deg: 160,
-              }}
-              ff={theme.other.statlySportsFontBebasNeue}
-              fz={70}
-              ta={"center"}
-            >
-              Contact Us{" "}
-            </Text>
+            <Fade direction="up" triggerOnce>
+              <Text
+                component="span"
+                inherit
+                variant="gradient"
+                gradient={{
+                  from: theme.other.statlySportsBlue,
+                  to: theme.other.statlySportsRed,
+                  deg: 160,
+                }}
+                ff={theme.other.statlySportsFontBebasNeue}
+                fz={70}
+                ta={"center"}
+              >
+                Contact Us
+              </Text>
+            </Fade>
           </Center>
 
-          <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
-            <TextInput
-              label="Name"
-              placeholder="Your name"
-              name="name"
-              variant="filled"
-              {...form.getInputProps("name")}
-            />
-            <TextInput
-              label="Email"
-              placeholder="Your email"
-              name="email"
-              variant="filled"
-              {...form.getInputProps("email")}
-            />
-          </SimpleGrid>
+          <Slide direction="up" triggerOnce>
+            <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
+              <TextInput
+                label="Name"
+                placeholder="Your name"
+                name="name"
+                variant="filled"
+                {...form.getInputProps("name")}
+              />
+              <TextInput
+                label="Email"
+                placeholder="Your email"
+                name="email"
+                variant="filled"
+                {...form.getInputProps("email")}
+              />
+            </SimpleGrid>
 
-          <TextInput
-            label="Subject"
-            placeholder="Subject"
-            mt="md"
-            name="subject"
-            variant="filled"
-            {...form.getInputProps("subject")}
-          />
-          <Textarea
-            mt="md"
-            label="Message"
-            placeholder="Your message"
-            maxRows={10}
-            minRows={5}
-            autosize
-            name="message"
-            variant="filled"
-            {...form.getInputProps("message")}
-          />
+            <TextInput
+              label="Subject"
+              placeholder="Subject"
+              mt="md"
+              name="subject"
+              variant="filled"
+              {...form.getInputProps("subject")}
+            />
 
-          <Group justify="center" mt="xl">
-            {/* Todo update primary styling for button */}
-            <Button
-              type="submit"
-              size="lg"
-              className={classes.sendMessageBtn}
-              radius="xl"
-              rightSection={
-                <IconSend
-                  stroke={2}
-                  style={{
-                    marginBottom: "-3px",
-                  }}
-                />
-              }
-            >
-              Send message
-            </Button>
-          </Group>
+            <Textarea
+              mt="md"
+              label="Message"
+              placeholder="Your message"
+              maxRows={10}
+              minRows={5}
+              autosize
+              name="message"
+              variant="filled"
+              {...form.getInputProps("message")}
+            />
+          </Slide>
+
+          <Fade direction="up" delay={150} triggerOnce>
+            <Group justify="center" mt="xl">
+              <Button
+                type="submit"
+                size="lg"
+                className={classes.sendMessageBtn}
+                radius="xl"
+                rightSection={
+                  <IconSend
+                    stroke={2}
+                    style={{
+                      marginBottom: "-3px",
+                    }}
+                  />
+                }
+              >
+                Send message
+              </Button>
+            </Group>
+          </Fade>
         </Container>
       </form>
     </>

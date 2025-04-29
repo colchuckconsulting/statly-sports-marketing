@@ -118,3 +118,16 @@
     background-position: 0% 50%;
   }
 }
+
+@keyframes fadeInBlur {
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.backgroundFade {
+  animation: fadeInBlur 2.5s ease-out forwards;
+  filter: blur(8px);
+  opacity: 0;
+}

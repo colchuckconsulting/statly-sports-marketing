@@ -15,7 +15,7 @@ import {
   IconBrandSpeedtest,
   IconPlayHandball,
 } from "@tabler/icons-react";
-import { Fade, Slide, Zoom, Bounce } from "react-awesome-reveal";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 export const HittraxData = [
   { date: "Mar 22", MEV: 60, AEV: 40 },

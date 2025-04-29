@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import {
   Anchor,
   Box,
@@ -107,11 +106,15 @@ export function HeaderMegaMenu() {
     <Box>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Fade direction="up" duration={900} triggerOnce>
+          <Fade direction="up" duration={900} delay={800} triggerOnce>
             <Image
               src="statlysports-logo-1.svg"
               alt="Statly Sports Logo"
               height={35}
+              style={{
+                // Prevents image cutoff on mobile by ensuring it fills the container
+                objectFit: "fill",
+              }}
             />
           </Fade>
           <Box>
@@ -175,6 +178,10 @@ export function HeaderMegaMenu() {
             src="statlysports-logo-1.svg"
             alt="Statly Sports Logo"
             height={35}
+            style={{
+              // Prevents image cutoff on mobile by ensuring it fills the container
+              objectFit: "fill",
+            }}
           />
         }
         hiddenFrom="sm"
