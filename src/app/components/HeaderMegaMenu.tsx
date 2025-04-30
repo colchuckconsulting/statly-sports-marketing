@@ -61,9 +61,9 @@ export function HeaderMegaMenu() {
     if (el) {
       handleCloseDrawer();
       setTimeout(() => {
-        // behavior: "smooth" is not supported in Safari mobile
-        // so we use "auto" instead
-        el.scrollIntoView({ behavior: "auto" });
+        // Passing a "behavior" option to scrollIntoView breaks in Safari and Chrome mobile browsers,
+        // so we omit it entirely and use the default scrolling behavior instead.
+        el.scrollIntoView();
       }, 100);
     }
   };
