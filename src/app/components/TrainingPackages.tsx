@@ -49,8 +49,8 @@ export function TrainingPackages() {
 
   return (
     <Container size="xl" mt="lg">
-      <Center>
-        <Slide direction="down" triggerOnce>
+      <Slide direction="down" triggerOnce>
+        <Center>
           <Text
             component="span"
             inherit
@@ -67,8 +67,8 @@ export function TrainingPackages() {
           >
             Training Packages
           </Text>
-        </Slide>
-      </Center>
+        </Center>
+      </Slide>
 
       <Container size="sm" mb="lg">
         <Fade direction="up" cascade triggerOnce damping={0.2}>
