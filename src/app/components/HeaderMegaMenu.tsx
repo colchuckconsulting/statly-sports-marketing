@@ -41,6 +41,17 @@ const mockdata = [
   { icon: CalendarIcon.src, title: "Scheduling", href: "#scheduling" },
 ];
 
+function scrollToElement(element: HTMLElement) {
+  const rect = element.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const offsetTop = rect.top + scrollTop;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: "auto", // avoid issues with Safari smooth scroll
+  });
+}
+
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
@@ -57,13 +68,11 @@ export function HeaderMegaMenu() {
   };
 
   const handleNavClick = (id: string) => {
-    const el = document.querySelector(id);
+    const el = document.querySelector(id) as HTMLElement;
     if (el) {
       handleCloseDrawer();
       setTimeout(() => {
-        // Passing a "behavior" option to scrollIntoView breaks in Safari and Chrome mobile browsers,
-        // so we omit it entirely and use the default scrolling behavior instead.
-        el.scrollIntoView();
+        scrollToElement(el);
       }, 100);
     }
   };
@@ -94,7 +103,6 @@ export function HeaderMegaMenu() {
                   width={28}
                   height={28}
                   style={{
-                    // Fix for Firefox
                     flex: "inherit",
                     objectFit: "contain",
                   }}
@@ -119,7 +127,6 @@ export function HeaderMegaMenu() {
               alt="Statly Sports Logo"
               height={35}
               style={{
-                // Prevents image cutoff on mobile by ensuring it fills the container
                 objectFit: "fill",
               }}
             />
@@ -186,7 +193,6 @@ export function HeaderMegaMenu() {
             alt="Statly Sports Logo"
             height={35}
             style={{
-              // Prevents image cutoff on mobile by ensuring it fills the container
               objectFit: "fill",
             }}
           />
@@ -194,7 +200,7 @@ export function HeaderMegaMenu() {
         hiddenFrom="sm"
         zIndex={1000000}
       >
-        <ScrollArea h="calc(100vh - 80px" mx="-md">
+        <ScrollArea h="calc(100vh - 80px)" mx="-md">
           <Divider my="sm" />
           <Anchor
             href="#whoWeAre"
