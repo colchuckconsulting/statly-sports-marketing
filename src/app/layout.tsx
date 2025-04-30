@@ -23,8 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/*
-            Open Graph meta tags enable rich link previews when your site is shared on 
-            social platforms such as Facebook, LinkedIn, and Slack. These tags control 
+            Open Graph meta tags enable rich link previews when your site is shared on
+            social platforms such as Facebook, LinkedIn, and Slack. These tags control
             how your content is displayed in previews (e.g., title, description, image).
 
             Documentation: https://ogp.me/
