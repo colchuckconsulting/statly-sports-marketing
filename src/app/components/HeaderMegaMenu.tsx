@@ -91,6 +91,11 @@ export function HeaderMegaMenu() {
                   alt={item.title}
                   width={28}
                   height={28}
+                  style={{
+                    // Fix for Firefox
+                    flex: "inherit",
+                    objectFit: "contain",
+                  }}
                 />
               </ThemeIcon>
               <Text fw={500}>{item.title}</Text>

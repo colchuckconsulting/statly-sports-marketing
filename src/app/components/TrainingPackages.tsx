@@ -104,9 +104,6 @@ export function TrainingPackages() {
                         style={{
                           width: "100px",
                           height: "100px",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
                           marginTop: "-30px",
                         }}
                       >
