@@ -22,7 +22,7 @@ export function WhoWeAre() {
             alt="Baseball Player Image"
             pos="absolute"
             top={0}
-            right={{ base: "-2.75rem", sm: 0 }}
+            right={{ base: "-12rem", sm: 0 }}
             h="100%"
             w="auto"
             style={{ zIndex: 0, opacity: 0.3 }}
