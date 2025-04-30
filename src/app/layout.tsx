@@ -21,6 +21,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/*
+            Open Graph meta tags enable rich link previews when your site is shared on 
+            social platforms such as Facebook, LinkedIn, and Slack. These tags control 
+            how your content is displayed in previews (e.g., title, description, image).
+
+            Documentation: https://ogp.me/
+            Helpful generator: https://freecodetools.org/ogp/
+        */}
+        <meta
+          property="og:title"
+          content="Statly Sports | Data-Driven Performance Insights for Athletes & Teams"
+        />
+        <meta property="og:site_name" content="Statly Sports" />
+        <meta property="og:url" content="https://statlysports.com/" />
+        <meta
+          property="og:description"
+          content="Level up your game with Statly Sports — powerful performance insights for athletes and teams driven by data."
+        />
+        <meta property="og:type" content="business.business" />
+        <meta
+          property="og:image"
+          content="https://statlysports.com/preview-background.png"
+        />
+      </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
