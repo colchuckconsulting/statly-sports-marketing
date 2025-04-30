@@ -41,15 +41,23 @@ const mockdata = [
   { icon: CalendarIcon.src, title: "Scheduling", href: "#scheduling" },
 ];
 
-function scrollToElement(element: HTMLElement) {
-  const rect = element.getBoundingClientRect();
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  const offsetTop = rect.top + scrollTop;
+function smoothScrollTo(targetY: number, duration = 400) {
+  const startY = window.scrollY || window.pageYOffset;
+  const distance = targetY - startY;
+  let startTime: number | null = null;
 
-  window.scrollTo({
-    top: offsetTop,
-    behavior: "auto", // avoid issues with Safari smooth scroll
-  });
+  function step(timestamp: number) {
+    if (!startTime) startTime = timestamp;
+    const progress = timestamp - startTime;
+    const percent = Math.min(progress / duration, 1);
+    window.scrollTo(0, startY + distance * percent);
+
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
 }
 
 export function HeaderMegaMenu() {
@@ -72,7 +80,11 @@ export function HeaderMegaMenu() {
     if (el) {
       handleCloseDrawer();
       setTimeout(() => {
-        scrollToElement(el);
+        const rect = el.getBoundingClientRect();
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const offsetTop = rect.top + scrollTop;
+        const headerOffset = 60; // Adjust based on your fixed header height
+        smoothScrollTo(offsetTop - headerOffset);
       }, 100);
     }
   };
