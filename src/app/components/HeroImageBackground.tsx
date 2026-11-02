@@ -51,7 +51,7 @@ export function HeroImageBackground() {
             </Text>
             <Box className={classes.controlContainer}>
               <Anchor
-                href="https://test.statlysports.com/players"
+                href="https://app.statlysports.com/players"
                 target="_blank"
               >
                 <Button
